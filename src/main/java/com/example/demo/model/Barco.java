@@ -39,7 +39,6 @@ public class Barco{
 	}
 
 	
-	//Hola que tal
 	public Barco(String matricula, String nombre, int n_amarre, double cuota, Socio socio) {
 		super();
 		this.matricula = matricula;
