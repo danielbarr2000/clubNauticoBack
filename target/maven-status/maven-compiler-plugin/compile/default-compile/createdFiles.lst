@@ -1,0 +1,15 @@
+com\example\demo\dto\SocioDTO.class
+com\example\demo\repository\BarcoRepository.class
+com\example\demo\service\SocioService.class
+com\example\demo\controller\Controller.class
+com\example\demo\model\Socio.class
+com\example\demo\repository\SalidaRepository.class
+com\example\demo\model\Salida.class
+com\example\demo\model\Barco.class
+com\example\demo\service\SalidaService.class
+com\example\demo\repository\SocioRepository.class
+com\example\demo\dto\SalidaDTO.class
+com\example\demo\service\BarcoService.class
+com\example\demo\ClubNautico2Application$1.class
+com\example\demo\ClubNautico2Application.class
+com\example\demo\dto\BarcoDTO.class
