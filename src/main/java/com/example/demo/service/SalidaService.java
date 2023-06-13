@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.SalidaDTO;
+import com.example.demo.model.Barco;
 import com.example.demo.model.Salida;
 import com.example.demo.repository.BarcoRepository;
 import com.example.demo.repository.SalidaRepository;
@@ -30,6 +31,11 @@ public class SalidaService {
 	public Salida getSalidaById(Integer id) {
 		return salidaRepository.findById(id).orElse(null);
 	}
+	
+	
+	public List<Salida> obtenerSalidasPorMatricula(String matricula) {
+        return salidaRepository.findByMatricula_Matricula(matricula);
+    }
 	
 	public Salida postSalida(SalidaDTO salidaDTO) {
 		Salida salida = new Salida();

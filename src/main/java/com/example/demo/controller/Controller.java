@@ -142,6 +142,11 @@ public class Controller {
 		return salidaService.getSalidaById(id);
 	}
 	
+	@GetMapping("/salidas/get/matricula/{matricula}")
+    public List<Salida> obtenerSalidasPorMatricula(@PathVariable("matricula") String matricula) {
+        return salidaService.obtenerSalidasPorMatricula(matricula);
+    }
+	
 	//POST
 	@PostMapping("/salidas/post")
 	public Salida postSalida(@RequestBody SalidaDTO salidaDTO) {

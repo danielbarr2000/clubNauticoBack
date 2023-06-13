@@ -23,18 +23,18 @@ public class Salida {
 	private String nombre_patron;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "matricula_barco")
-	private Barco matricula_barco;
+	@JoinColumn(name = "matricula")
+	private Barco matricula;
 	
 	public Salida() {
 	}
 
-	public Salida(int id_salida, LocalDate fecha, String destino, String nombre_patron, Barco matricula_barco) {
+	public Salida(int id_salida, LocalDate fecha, String destino, String nombre_patron, Barco matricula) {
 		this.id_salida = id_salida;
 		this.fecha = fecha;
 		this.destino = destino;
 		this.nombre_patron = nombre_patron;
-		this.matricula_barco = matricula_barco;
+		this.matricula = matricula;
 	}
 
 	public int getId_salida() {
@@ -70,17 +70,17 @@ public class Salida {
 	}
 
 	public String getMatricula_barco() {
-		return matricula_barco.getMatricula();
+		return matricula.getMatricula();
 	}
 
 	public void setMatricula_barco(Barco matricula_barco) {
-		this.matricula_barco = matricula_barco;
+		this.matricula = matricula_barco;
 	}
 
 	@Override
 	public String toString() {
 		return "Salida [id_salida=" + id_salida + ", fecha=" + fecha + ", destino=" + destino + ", nombre_patron="
-				+ nombre_patron + ", matricula_barco=" + matricula_barco + "]";
+				+ nombre_patron + ", matricula_barco=" + matricula + "]";
 	}
 
 	

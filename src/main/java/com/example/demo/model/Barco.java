@@ -30,7 +30,7 @@ public class Barco{
 	@JoinColumn(name = "id_socio")
 	private Socio socio;
 	
-	@OneToMany(mappedBy = "matricula_barco", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "matricula", cascade = CascadeType.ALL)
 	private List<Salida> salidas = new ArrayList<>();
 
 	
