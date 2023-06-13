@@ -30,6 +30,10 @@ public class BarcoService {
 	public Barco getBarcoByMatricula(String matricula) {
 		return barcoRepository.findById(matricula).orElse(null);
 	}
+	
+	public List<Barco> buscarPorIdSocio(int idSocio) {
+        return barcoRepository.findBySocioIdSocio(idSocio);
+    }
 
 	public Barco deleteBarco(String matricula) {
 		Barco barcoDelete = getBarcoByMatricula(matricula);

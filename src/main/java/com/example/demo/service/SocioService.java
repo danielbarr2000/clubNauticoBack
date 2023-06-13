@@ -30,6 +30,12 @@ public class SocioService {
 		return socioDelete;
 	}
 	
+	public Socio getSocioByNombre(String nombre){
+		return socioRepository.findFirstByNombre(nombre);
+	}
+	
+	
+	
 	public Socio updateSocio(SocioDTO socioDTO, int id) {
 		Socio socio = getSocioById(id);
 		

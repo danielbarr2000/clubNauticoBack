@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,6 +57,12 @@ public class Controller {
 		return socioService.getSocioById(id);
 	}
 	
+	//GET SOCIO BY USERNAME
+	@GetMapping("/socios/get/nombre/{nombre}")
+	public Socio getSocioByNombre(@PathVariable String nombre) {
+		return socioService.getSocioByNombre(nombre);
+	}
+	
 	//POST
 	@PostMapping("/socios/post")
 	public Socio postSocio(@RequestBody SocioDTO socioDTO) {
@@ -88,6 +96,17 @@ public class Controller {
 	public Barco getBarcoByMatricula(@PathVariable String matricula) {
 		return barcoService.getBarcoByMatricula(matricula);
 	}
+	
+	//GET BARCOS BY IDSOCIO
+	@GetMapping("/barcos/get/nombreusuario/{idSocio}")
+	public ResponseEntity<List<Barco>> obtenerBarcosPorIdSocio(@PathVariable int idSocio) {
+        List<Barco> barcos = barcoService.buscarPorIdSocio(idSocio);
+        if (barcos.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(barcos, HttpStatus.OK);
+        }
+    }
 
 	//POST
 	@PostMapping("/barcos/post")
