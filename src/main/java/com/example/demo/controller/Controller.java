@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.BarcoDTO;
@@ -62,6 +63,16 @@ public class Controller {
 	public Socio getSocioByNombre(@PathVariable String nombre) {
 		return socioService.getSocioByNombre(nombre);
 	}
+	
+	@PostMapping("/socios/auth")
+	public String comprobarExistenciaSocio(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave) {
+        boolean existeSocio = socioService.comprobarExistenciaSocio(nombre, clave);
+        if (existeSocio) {
+            return "El socio existe en la base de datos.";
+        } else {
+            return "El socio no existe en la base de datos.";
+        }
+    }
 	
 	//POST
 	@PostMapping("/socios/post")

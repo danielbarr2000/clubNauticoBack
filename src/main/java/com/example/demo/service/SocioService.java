@@ -34,6 +34,11 @@ public class SocioService {
 		return socioRepository.findFirstByNombre(nombre);
 	}
 	
+	public boolean comprobarExistenciaSocio(String nombre, String clave) {
+        Socio socio = socioRepository.findByNombreAndClave(nombre, clave);
+        return socio != null;
+    }
+	
 	
 	
 	public Socio updateSocio(SocioDTO socioDTO, int id) {
