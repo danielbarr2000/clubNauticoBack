@@ -35,8 +35,13 @@ public class SocioService {
 	}
 	
 	public boolean comprobarExistenciaSocio(String nombre, String clave) {
-        Socio socio = socioRepository.findByNombreAndClave(nombre, clave);
-        return socio != null;
+        Socio socio = socioRepository.findByNombreAndClave(nombre,clave);
+        
+        if(socio==null){
+        	return false;
+        }else {
+        	return true;
+        }
     }
 	
 	

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -65,13 +66,11 @@ public class Controller {
 	}
 	
 	@PostMapping("/socios/auth")
-	public String comprobarExistenciaSocio(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave) {
-        boolean existeSocio = socioService.comprobarExistenciaSocio(nombre, clave);
-        if (existeSocio) {
-            return "El socio existe en la base de datos.";
-        } else {
-            return "El socio no existe en la base de datos.";
-        }
+	public boolean comprobarExistenciaSocio(@RequestBody Map<String, String> request) {
+		String nombre = request.get("nombre");
+		String clave = request.get("clave");
+        return socioService.comprobarExistenciaSocio(nombre, clave);
+        
     }
 	
 	//POST
