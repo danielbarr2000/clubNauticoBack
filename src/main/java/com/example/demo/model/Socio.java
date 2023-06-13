@@ -20,6 +20,8 @@ public class Socio {
 	
 	private String telefono;
 	
+	private String clave;
+	
 	@OneToMany(mappedBy = "socio", cascade = CascadeType.ALL)
 	private List<Barco> barcos = new ArrayList<>();
 	
@@ -30,11 +32,12 @@ public class Socio {
 
 
 
-	public Socio(int idSocio, String nombre, String telefono) {
+	public Socio(int idSocio, String nombre, String telefono, String clave) {
 		super();
 		this.idSocio = idSocio;
 		this.nombre = nombre;
 		this.telefono = telefono;
+		this.clave = clave;
 	}
 
 	
@@ -71,15 +74,21 @@ public class Socio {
 	public void setBarcos(List<Barco> barcos) {
 		this.barcos = barcos;
 	}
-
 	
-	//ToString--------------------
+	
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Socio [idSocio=" + idSocio + ", nombre=" + nombre + ", telefono=" + telefono + ", barcos=" + barcos
-				+ "]";
+		return "Socio [idSocio=" + idSocio + ", nombre=" + nombre + ", telefono=" + telefono + ", clave=" + clave
+				+ ", barcos=" + barcos + "]";
+		}
 	}
-}
-	
-
-

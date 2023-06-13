@@ -47,6 +47,7 @@ public class SocioService {
 		socio.setIdSocio(socioDTO.getIdSocio());
 		socio.setNombre(socioDTO.getNombre());
 		socio.setTelefono(socioDTO.getTelefono());
+		socio.setClave(socioDTO.getClave());
 		
 		socioRepository.save(socio);
 		return socio;
