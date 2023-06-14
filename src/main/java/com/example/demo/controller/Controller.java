@@ -108,7 +108,7 @@ public class Controller {
 	}
 	
 	//GET BARCOS BY IDSOCIO
-	@GetMapping("/barcos/get/nombreusuario/{idSocio}")
+	@GetMapping("/barcos/get/user/{idSocio}")
 	public ResponseEntity<List<Barco>> obtenerBarcosPorIdSocio(@PathVariable int idSocio) {
         List<Barco> barcos = barcoService.buscarPorIdSocio(idSocio);
         if (barcos.isEmpty()) {
