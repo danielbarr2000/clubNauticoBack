@@ -157,6 +157,11 @@ public class Controller {
         return salidaService.obtenerSalidasPorMatricula(matricula);
     }
 	
+	@GetMapping("/salidas/get/usuario/{usuarioId}")
+	public List<Salida> obtenerSalidasDeBarcosAsignadosAUsuario(@PathVariable Integer usuarioId) {
+        return salidaService.obtenerSalidasDeBarcosAsignadosAUsuario(usuarioId);
+    }
+	
 	//POST
 	@PostMapping("/salidas/post")
 	public Salida postSalida(@RequestBody SalidaDTO salidaDTO) {

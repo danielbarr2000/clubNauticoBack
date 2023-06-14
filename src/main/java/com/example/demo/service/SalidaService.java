@@ -37,6 +37,10 @@ public class SalidaService {
         return salidaRepository.findByMatricula_Matricula(matricula);
     }
 	
+	public List<Salida> obtenerSalidasDeBarcosAsignadosAUsuario(int usuarioId) {
+        return salidaRepository.findByMatricula_Socio_IdSocio(usuarioId);
+    }
+	
 	public Salida postSalida(SalidaDTO salidaDTO) {
 		Salida salida = new Salida();
 		

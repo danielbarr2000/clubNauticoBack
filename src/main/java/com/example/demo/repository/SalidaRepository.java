@@ -9,4 +9,5 @@ import com.example.demo.model.Salida;
 
 public interface SalidaRepository extends JpaRepository<Salida, Integer> {
 	    List<Salida> findByMatricula_Matricula(String matricula);
+	    List<Salida> findByMatricula_Socio_IdSocio(int usuarioId);
 }
