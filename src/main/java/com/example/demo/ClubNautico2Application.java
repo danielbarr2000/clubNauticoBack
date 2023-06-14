@@ -19,7 +19,7 @@ public class ClubNautico2Application {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-				.allowedOrigins("http://localhost:4200").allowedMethods("GET","POST","PUT","DELETE","HEAD").allowCredentials(true);
+				.allowedOrigins("https://bahia-mar-frontend-c26234d91215.herokuapp.com").allowedMethods("GET","POST","PUT","DELETE","HEAD").allowCredentials(true);
 			}
 		};
 	}
