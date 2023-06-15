@@ -19,7 +19,7 @@ public class ClubNautico2Application {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-				.allowedOrigins("*").allowedMethods("GET","POST","PUT","DELETE","HEAD").allowCredentials(true);
+				.allowedOrigins("https://ruizgijon.ddns.net/").allowedMethods("GET","POST","PUT","DELETE","HEAD").allowCredentials(true);
 			}
 		};
 	}
