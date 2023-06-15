@@ -60,7 +60,7 @@ public class SocioService {
 	public Socio postSocio(SocioDTO socioDTO) {
 		Socio socio = new Socio();
 		
-		socio.setIdSocio(socioDTO.getIdSocio());
+		//socio.setIdSocio(socioDTO.getIdSocio());
 		socio.setNombre(socioDTO.getNombre());
 		socio.setTelefono(socioDTO.getTelefono());
 		socio.setClave(socioDTO.getClave());
